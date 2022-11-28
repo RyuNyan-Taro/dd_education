@@ -130,3 +130,30 @@ def convert_xy(df: pd.DataFrame, x_iloc: int = 16, y_col: str = 'Function') -> p
     xy_df = pd.concat([x_df, df.loc[:, y_col]], axis=1)
 
     return xy_df
+
+
+def drop_replace(x_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    drop 'Text_2' and 'Sub_Object_Description' columns, then replace ',' and '"' to space or none
+
+    Parameters
+    ----------
+    x_df : DataFrame
+        train or test DataFrame for the competition
+
+    Returns
+    -------
+    x_df : DataFrame
+        dropped and replaced DataFrame
+
+    """
+
+    del x_df['Text_2']
+    del x_df['Sub_Object_Description']
+
+    for column in x_df.columns:
+        if x_df[column].dtype == 'object':
+            x_df[column] = x_df[column].str.replace(',', ' ')
+            x_df[column] = x_df[column].str.replace('"', '')
+
+    return x_df
