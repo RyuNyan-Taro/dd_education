@@ -29,9 +29,21 @@ NFL problem > ML problem
 Why: 
 1. a lot of NeN values
 2. did not bring any usefulness to the model
-## Iteration
+## Score
+First, I added predicted class to feature cols for next predict
 ![iteration1000_2000](image/iteration1000_2000.png)
 change iteration 1000 -> 2000
 
 It may be case of over fitting
+![benchmark1_more](image/drop_bmark1_onlyused_x.png)
+
+1. Delete Text_3 and Sub_Obkect_Description
+2. Not add predicted class to feature cols
+-> 0.9790
+
+Why: predicted class may case 
+
+
+
+
         
