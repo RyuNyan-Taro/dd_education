@@ -29,6 +29,14 @@ NFL problem > ML problem
 Why: 
 1. a lot of NeN values
 2. did not bring any usefulness to the model
+## Bench mark 3 gitHub
+https://github.com/drivendataorg/box-plots-for-education/blob/5e450ff19739617c68f0a2c5e6b96c08a53c149a/3rd-place/code/train1.R
+
+### Point
+1. It wrote by using R (I can't use the language)
+2. GBM model
+3. repeated text was converted to a number (top1 to 3)
+
 ## Score
 First, I added predicted class to feature cols for next predict
 ![iteration1000_2000](image/iteration1000_2000.png)
