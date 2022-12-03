@@ -45,11 +45,11 @@ change iteration 1000 -> 2000
 It may be case of over fitting
 ![benchmark1_more](image/drop_bmark1_onlyused_x.png)
 
-1. Delete Text_3 and Sub_Obkect_Description
+1. Delete Text_3 and Sub_Object_Description
 2. Not add predicted class to feature cols
 -> 0.9790
 
-Why: predicted class may case 
+Why: predicted class may case of low score
 
 
 
