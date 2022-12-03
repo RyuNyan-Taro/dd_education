@@ -148,11 +148,15 @@ def drop_replace(x_df: pd.DataFrame) -> pd.DataFrame:
 
     """
 
+    # from benchmark 1
     del x_df['Text_2']
     del x_df['Sub_Object_Description']
+
+    # from benchmark 2
     del x_df['FTE']
     del x_df['Total']
 
+    # from benchmark 1
     for column in x_df.columns:
         if x_df[column].dtype == 'object':
             x_df[column] = x_df[column].str.replace(',', ' ')
