@@ -150,6 +150,8 @@ def drop_replace(x_df: pd.DataFrame) -> pd.DataFrame:
 
     del x_df['Text_2']
     del x_df['Sub_Object_Description']
+    del x_df['FTE']
+    del x_df['Total']
 
     for column in x_df.columns:
         if x_df[column].dtype == 'object':
