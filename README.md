@@ -22,7 +22,9 @@ https://github.com/drivendataorg/box-plots-for-education/tree/5e450ff19739617c68
 1. combination of Log model and RF model
 
 Log model: Stocastic Gradient Descent
+
 RF model: Random forest model
+
 2. FTE and Total were removed
 NFL problem > ML problem
 
@@ -47,12 +49,14 @@ It may be case of over fitting
 
 1. Delete Text_3 and Sub_Object_Description
 2. Not add predicted class to feature cols
+
 -> 0.9790
 
 Why: predicted class may case of low score
 
 ![benchmark1_2](image/drop_bmark1_2_unused_col.png)
 1. Delete four columns (Text_3, Sub_Object_Description, FTE and Total)
+
 0.9790 -> 1.0885
 
 
