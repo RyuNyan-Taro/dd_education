@@ -14,6 +14,21 @@ https://github.com/drivendataorg/box-plots-for-education/tree/5e450ff19739617c68
 2. Online learning 
 3. Replacing , and “” to space
 
+## Bench mark 2 gitHub
+
+https://github.com/drivendataorg/box-plots-for-education/tree/5e450ff19739617c68f0a2c5e6b96c08a53c149a/2nd-place
+
+### Point
+1. combination of Log model and RF model
+
+Log model: Stocastic Gradient Descent
+RF model: Random forest model
+2. FTE and Total were removed
+NFL problem > ML problem
+
+Why: 
+1. a lot of NeN values
+2. did not bring any usefulness to the model
 ## Iteration
 ![iteration1000_2000](image/iteration1000_2000.png)
 change iteration 1000 -> 2000
