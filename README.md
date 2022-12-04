@@ -59,5 +59,9 @@ Why: predicted class may case of low score
 
 0.9790 -> 1.0885
 
+![bmark2_base](image/bmark2_base.png)
+0.9790 -> 0.5090
+1. I used part 1 of second_place
+2. fixed some error because base code was wrought some years ago.
 
         
