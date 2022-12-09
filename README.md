@@ -21,7 +21,7 @@ https://github.com/drivendataorg/box-plots-for-education/tree/5e450ff19739617c68
 ### Point
 1. combination of Log model and RF model
 
-Log model: Stocastic Gradient Descent
+Log model: Stochastic Gradient Descent
 
 RF model: Random forest model
 
@@ -63,5 +63,4 @@ Why: predicted class may case of low score
 0.9790 -> 0.5090
 1. I used part 1 of second_place
 2. fixed some error because base code was wrought some years ago.
-sss
         
