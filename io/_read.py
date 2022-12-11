@@ -123,9 +123,7 @@ def convert_xy(df: pd.DataFrame, x_iloc: int = 16, y_col: str = 'Function') -> p
     """
 
     x_df = df.iloc[:, :x_iloc].copy()
-    feature_cols = list(np.where(x_df.dtypes != float)[0])
-    x_df = df.iloc[:, list(set(range(len(x_df.columns))) - set(feature_cols))].merge(
-        df.iloc[:, feature_cols].fillna('NO LABEL'), left_index=True, right_index=True)
+    x_df, _ = convert_feature(x_df)
     xy_df = pd.concat([x_df, df.loc[:, y_col]], axis=1)
 
     return xy_df
@@ -148,8 +146,8 @@ def drop_replace(x_df: pd.DataFrame) -> pd.DataFrame:
     """
 
     # from benchmark 1
-    del x_df['Text_2']
-    del x_df['Sub_Object_Description']
+    # del x_df['Text_2']
+    # del x_df['Sub_Object_Description']
 
     # from benchmark 2
     del x_df['FTE']
