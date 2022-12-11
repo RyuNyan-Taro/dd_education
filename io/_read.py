@@ -69,8 +69,6 @@ def divide_xy(df: pd.DataFrame, x_iloc: int = 16, y_col: str = 'Function') -> Tu
 
     x_df = df.iloc[:, :x_iloc]
     x_df, feature_cols = convert_feature(x_df)
-    x_df["combined"] = [' '.join(row) for row in x_df.iloc[:, feature_cols].values]
-    feature_cols.append(len(x_df.columns) - 1)
     le = LabelEncoder()
     y_array = le.fit_transform(df.loc[:, y_col])
 
@@ -97,7 +95,7 @@ def convert_feature(x_df) -> Tuple[pd.DataFrame, List]:
 
     feature_cols = list(np.where(x_df.dtypes != float)[0])
     x_df = x_df.iloc[:, list(set(range(len(x_df.columns))) - set(feature_cols))
-           ].merge(x_df.iloc[:, feature_cols].fillna('NO LABEL'), left_index=True, right_index=True)
+           ].merge(x_df.iloc[:, feature_cols].fillna('no_text'), left_index=True, right_index=True)
     feature_cols = list(np.where(x_df.dtypes != float)[0])
 
     return x_df, feature_cols
@@ -160,3 +158,10 @@ def drop_replace(x_df: pd.DataFrame) -> pd.DataFrame:
             x_df[column] = x_df[column].str.replace('"', '')
 
     return x_df
+
+
+def add_combined(df, feature_cols):
+    df["combined"] = [' '.join(row) for row in df.iloc[:, feature_cols].values]
+    feature_cols.append(len(df.columns) - 1)
+
+    return df, feature_cols
