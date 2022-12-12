@@ -93,12 +93,16 @@ def convert_feature(x_df) -> Tuple[pd.DataFrame, List]:
 
     """
 
-    feature_cols = list(np.where(x_df.dtypes != float)[0])
+    feature_cols = feature_iloc(x_df)
     x_df = x_df.iloc[:, list(set(range(len(x_df.columns))) - set(feature_cols))
            ].merge(x_df.iloc[:, feature_cols].fillna('no_text'), left_index=True, right_index=True)
-    feature_cols = list(np.where(x_df.dtypes != float)[0])
+    feature_cols = feature_iloc(x_df)
 
     return x_df, feature_cols
+
+
+def feature_iloc(df):
+    return list(np.where(df.dtypes != float)[0])
 
 
 def convert_xy(df: pd.DataFrame, x_iloc: int = 16, y_col: str = 'Function') -> pd.DataFrame:
